@@ -15,6 +15,13 @@ g.mapleader = " "
 
 require("lazy").setup({
 	{
+		"kyazdani42/nvim-tree.lua",
+		config = function()
+			require("plugins.nvim-tree")
+		end,
+	},
+	-- colorscheme
+	{
 		"xiyaowong/transparent.nvim",
 	},
 	{
