@@ -20,6 +20,15 @@ require("lazy").setup({
 		opts = {},
 	},
 
+	-- git
+	{
+		"lewis6991/gitsigns.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function ()
+			require("plugins.gitsigns")
+		end,
+	},
+
 	-- editor
 	{
 		"altermo/ultimate-autopair.nvim",
