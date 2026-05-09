@@ -11,6 +11,10 @@ require("ocampo")
 cmd([[colorscheme oxide]])
 vim.opt.clipboard = "unnamedplus"
 
+-- highlight colors
+vim.opt.termguicolors = true
+require("nvim-highlight-colors").setup({})
+
 -- tabs
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
