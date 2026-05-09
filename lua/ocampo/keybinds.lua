@@ -68,6 +68,16 @@ map("n", "<leader>fn", ":enew<cr>", { desc = "New File" })
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", ":w<CR><esc>", { desc = "Save File" })
 
+-- barbar
+map("n", "<leader><TAB>", ":bnext<CR>", { desc = "Next tab" })
+map("n", "<leader><leader><TAB>", ":bprev<CR>", { desc = "Previous tab" })
+map("n", "<leader>x", ":bd<CR>", { desc = "Close tab" })
+map("n", "<leader>b1", ":BufferLineGoToBuffer 1<CR>", { desc = "Go to tab 1" })
+map("n", "<leader>b2", ":BufferLineGoToBuffer 2<CR>", { desc = "Go to tab 2" })
+map("n", "<leader>b3", ":BufferLineGoToBuffer 3<CR>", { desc = "Go to tab 3" })
+map("n", "<leader>b4", ":BufferLineGoToBuffer 4<CR>", { desc = "Go to tab 4" })
+map("n", "<leader>b5", ":BufferLineGoToBuffer 5<CR>", { desc = "Go to tab 5" })
+
 -- quit neovim
 map("n", "<leader>qq", ":qa<CR>", { desc = "Close nvim" })
 map("n", "<leader>wq", ":wqa<CR>", { desc = "Save and Close nvim" })
