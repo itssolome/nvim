@@ -14,6 +14,19 @@ vim.opt.rtp:prepend(lazypath)
 g.mapleader = " "
 
 require("lazy").setup({
+	-- formatter
+	{
+		"stevearc/conform.nvim",
+		opts = {},
+	},
+
+	-- editor
+	{
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6",
+		opts = {},
+	},
 	{
 		"kyazdani42/nvim-tree.lua",
 		config = function()
