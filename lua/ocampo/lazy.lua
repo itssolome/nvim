@@ -101,6 +101,167 @@ require("lazy").setup({
 			require("plugins.nvim-tree")
 		end,
 	},
+	{
+		"OXY2DEV/markview.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
+	{
+		"kyazdani42/nvim-tree.lua",
+		config = function()
+			require("plugins.nvim-tree")
+		end,
+	},
+	{
+		"nvimtools/none-ls.nvim",
+	},
+	{
+		"SmiteshP/nvim-navic",
+		dependencies = "neovim/nvim-lspconfig",
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.tree-sitter")
+		end,
+	},
+	{
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {},
+		dependencies = { { "echasnovski/mini.icons", opts = {} }, { "nvim-tree/nvim-web-devicons" } },
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("plugins.telescope")
+		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		ft = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+		},
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+	},
+	{
+		"folke/twilight.nvim",
+	},
+	{
+		"akinsho/bufferline.nvim",
+	},
+	{
+		"ThePrimeagen/vim-be-good",
+	},
+	{
+		"tpope/vim-dadbod",
+		"kristijanhusak/vim-dadbod-ui",
+		"kristijanhusak/vim-dadbod-completion",
+	},
+	{
+		"tpope/vim-fugitive",
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 500
+		end,
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+			},
+		},
+	},
+	{ "folke/zen-mode.nvim" },
+	{
+		"neoclide/coc-tsserver",
+		"neoclide/coc-snippets",
+	},
+	{
+		"xiyaowong/transparent.nvim",
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+		config = function()
+			require("plugins.indent_blankline")
+		end,
+	},
+	{
+		"brenoprata10/nvim-highlight-colors",
+	},
+	{
+		"lervag/vimtex",
+		lazy = false, -- we don't want to lazy load VimTeX
+		-- tag = "v2.15", -- uncomment to pin to a specific release
+		init = function()
+			-- VimTeX configuration goes here, e.g.
+			vim.g.vimtex_view_method = "zathura"
+		end,
+	},
+	-- {
+	-- 	"luckasRanarison/tailwind-tools.nvim",
+	-- 	name = "tailwind-tools",
+	-- 	build = ":UpdateRemotePlugins",
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		"nvim-telescope/telescope.nvim", -- optional
+	-- 		"neovim/nvim-lspconfig", -- optional
+	-- 	},
+	-- 	opts = {}, -- your configuration
+	-- },
+	{
+		"projekt0n/github-nvim-theme",
+	},
+	{
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+		},
+		init = function()
+			vim.g.barbar_auto_setup = false
+		end,
+		opts = {
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+		version = "^1.0.0", -- optional: only update when a new 1.x version is released
+	},
 	-- colorscheme
 	{
 		"xiyaowong/transparent.nvim",
