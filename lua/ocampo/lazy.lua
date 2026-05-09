@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 g.mapleader = " "
 
 require("lazy").setup({
-
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
@@ -37,14 +36,10 @@ require("lazy").setup({
 			require("plugins.lsp")
 		end,
 	},
-
-	-- formatter
 	{
 		"stevearc/conform.nvim",
 		opts = {},
 	},
-
-	-- git
 	{
 		"lewis6991/gitsigns.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -52,15 +47,11 @@ require("lazy").setup({
 			require("plugins.gitsigns")
 		end,
 	},
-
-	-- harpoon
 	{
 		"thePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-
-	-- snippets
 	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
@@ -87,8 +78,6 @@ require("lazy").setup({
 			require("plugins.luasnip")
 		end,
 	},
-
-	-- editor
 	{
 		"altermo/ultimate-autopair.nvim",
 		event = { "InsertEnter", "CmdlineEnter" },
@@ -230,20 +219,6 @@ require("lazy").setup({
 			-- VimTeX configuration goes here, e.g.
 			vim.g.vimtex_view_method = "zathura"
 		end,
-	},
-	-- {
-	-- 	"luckasRanarison/tailwind-tools.nvim",
-	-- 	name = "tailwind-tools",
-	-- 	build = ":UpdateRemotePlugins",
-	-- 	dependencies = {
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 		"nvim-telescope/telescope.nvim", -- optional
-	-- 		"neovim/nvim-lspconfig", -- optional
-	-- 	},
-	-- 	opts = {}, -- your configuration
-	-- },
-	{
-		"projekt0n/github-nvim-theme",
 	},
 	{
 		"romgrk/barbar.nvim",
