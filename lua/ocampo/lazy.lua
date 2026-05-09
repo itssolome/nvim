@@ -14,6 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 g.mapleader = " "
 
 require("lazy").setup({
+
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+	},
+
 	-- formatter
 	{
 		"stevearc/conform.nvim",
