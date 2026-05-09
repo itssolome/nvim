@@ -29,6 +29,34 @@ require("lazy").setup({
 		end,
 	},
 
+	-- snippets
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"onsails/lspkind.nvim",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+		},
+		config = function()
+			require("plugins.cmp")
+			require("plugins.nvim-cmp")
+		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		after = "nvim-cmp",
+		dependencies = { "saadparwaiz1/cmp_luasnip", "rafamadriz/friendly-snippets", "mlaursen/vim-react-snippets" },
+		config = function()
+			require("plugins.luasnip")
+		end,
+	},
+
 	-- editor
 	{
 		"altermo/ultimate-autopair.nvim",
